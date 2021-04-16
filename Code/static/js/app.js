@@ -30,7 +30,31 @@ let tbody = d3.select("tbody")
     }
 
     // Button click
+    function handleClick(){
+        
+        // Added to stop the whole page from refreshing
+        // Typically a good practice to do this type of prevent
+        d3.event.preventDefault();
+        
+        // Select HTML element
+        // Get the value property from the datetime to filter on it
+        let date = d3.select("#datetime").property("value");
+        let filterData = tableData;
+    
+        // If logic to see if filtered date is equal to date in the data
+        // Create filtered data variable
+        if(date) {
+            filterData = filterData.filter((row) => row.datetime === date);
+        }
+        
+        // Call the build function but use the filtered data
+        buildTable(filterData);
+    }
 
 
 // Calling the functions to build the table on the click
+
+// Tie the click event to the filter button of html
+d3.selectAll("#filter-btn").on("click", handleClick);
+
 buildTable(tableData);
