@@ -38,15 +38,24 @@ let tbody = d3.select("tbody")
         
         // Select HTML element
         // Get the value property from the datetime to filter on it
-        let date = d3.select("#datetime").property("value");
+        // let date = d3.select("#datetime").property("value");
+        
+        // Get the value property from the city to filter on it
+        let cityName = d3.select("#city").poperty("value");
+        
         let filterData = tableData;
     
         // If logic to see if filtered date is equal to date in the data
         // Create filtered data variable
-        if(date) {
-            filterData = filterData.filter((row) => row.datetime === date);
-        }
+        // if(date) {
+        //     filterData = filterData.filter((row) => row.datetime === date);
+        // }
         
+        // if logic to see if filtered city is equal to city in the data
+        if(cityName) {
+            filterData = filterData.filter((row) => row.city === cityName);
+        }
+
         // Call the build function but use the filtered data
         buildTable(filterData);
     }
