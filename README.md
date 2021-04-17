@@ -1,17 +1,16 @@
-# Web-Design-Challenge
-Homework 11 for UMN Data Visualization and Analytics bootcamp
+# Javascript-Challenge
+Homework 14 for UMN Data Visualization and Analytics bootcamp
 
 ## Noah LeVoir
 
-link to webpage submission: https://noahlevoir.github.io/Web-Design-Challenge/
+link to webpage submission: https://noahlevoir.github.io/javascript-challenge/
 
 This repo contains the following:
-- A Code folder with:
-  - A static folder containing:
+- A static folder containing:
     - A css folder with the style.css script
     - An images folder with the images used to on the webage
     - A js folder with: apps.js and data.js files
-  - index.html for the html script
+- index.html for the html script
 - This readme file
 
 
