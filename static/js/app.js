@@ -29,15 +29,13 @@ function buildTable(data){
     })
 }
 
-// Button click
-
+// Filter Button click
 function handleClick(){
     
     // Added to stop the whole page from refreshing on the click
     d3.event.preventDefault();
     
-    // Select HTML element
-    
+    // Select HTML elements - console.log to ensure the value is being selected
     // Get the value property from the datetime to filter on it
     var date = d3.select("#datetime").property("value");
     console.log(date);
@@ -46,18 +44,19 @@ function handleClick(){
     var cityName = d3.select("#city").property("value");
     console.log(cityName);
 
-    // // Get the value property from the state to filter on it
+    // Get the value property from the state to filter on it
     var stateName = d3.select("#state").property("value");
     console.log(stateName);
 
-    // // Get the value property from the country to filter on it
+    // Get the value property from the country to filter on it
     var countryName = d3.select("#country").property("value");
     console.log(countryName);
 
-    // // Get the value property from the shape to filter on it
+    // Get the value property from the shape to filter on it
     var shapeName = d3.select("#shape").property("value");
     console.log(shapeName);
 
+    
     // Adjust the table display to respond to the filters' value
     // Create variable for filtered data to use in generating new filtered table
     var filterData = tableData;
@@ -96,5 +95,5 @@ function handleClick(){
 
 // Tie the click event to the filter button of html
 d3.selectAll("#filter-btn").on("click", handleClick);
-
+// Call the build function
 buildTable(tableData);
