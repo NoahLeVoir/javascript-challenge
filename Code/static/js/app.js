@@ -47,10 +47,18 @@ function handleClick(){
     console.log(cityName);
 
     // // Get the value property from the state to filter on it
-    // var stateName = d3.select("#state").property("value");
-    // console.log(stateName);
+    var stateName = d3.select("#state").property("value");
+    console.log(stateName);
 
+    // // Get the value property from the country to filter on it
+    var countryName = d3.select("#country").property("value");
+    console.log(countryName);
 
+    // // Get the value property from the shape to filter on it
+    var shapeName = d3.select("#shape").property("value");
+    console.log(shapeName);
+
+    // Create variable for filtered data to use in generating new filtered table
     var filterData = tableData;
 
     // If logic to see if filtered date is equal to date in the data
