@@ -33,11 +33,11 @@ function buildTable(data){
 
 function handleClick(){
     
-    // Added to stop the whole page from refreshing
-    // Typically a good practice to do this type of prevent
+    // Added to stop the whole page from refreshing on the click
     d3.event.preventDefault();
     
     // Select HTML element
+    
     // Get the value property from the datetime to filter on it
     var date = d3.select("#datetime").property("value");
     console.log(date);
@@ -58,11 +58,11 @@ function handleClick(){
     var shapeName = d3.select("#shape").property("value");
     console.log(shapeName);
 
+    // Adjust the table display to respond to the filters' value
     // Create variable for filtered data to use in generating new filtered table
     var filterData = tableData;
 
     // If logic to see if filtered date is equal to date in the data
-    // Create filtered data variable
     if(date) {
         filterData = filterData.filter((row) => row.datetime === date);
     }
@@ -70,6 +70,21 @@ function handleClick(){
     // if logic to see if filtered city is equal to city in the data
     if(cityName) {
         filterData = filterData.filter((row) => row.city === cityName);
+    }
+
+    // if logic to see if filtered state is equal to state in the data
+    if(stateName) {
+        filterData = filterData.filter((row) => row.state === stateName);
+    }
+
+    // if logic to see if filtered country is equal to country in the data
+    if(countryName) {
+        filterData = filterData.filter((row) => row.country === countryName);
+    }
+
+    // if logic to see if filtered shape is equal to shape in the data
+    if(shapeName) {
+        filterData = filterData.filter((row) => row.shape === shapeName);
     }
 
     // Call the build function but use the filtered data
